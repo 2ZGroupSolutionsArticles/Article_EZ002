@@ -1,4 +1,4 @@
-![header](https://github.com/SezorusArticles/Article_EZ002/blob/master/Images/header1.jpg)
+![header](https://github.com/2ZGroupSolutionsArticles/Article_EZ002/blob/master/Images/header1.jpg)
 <br><br>
 
 # Understanding AVAssetResourceLoaderDelegate
@@ -105,7 +105,7 @@ func resourceLoader(_ resourceLoader: AVAssetResourceLoader, didCancel loadingRe
 Here's a diagram of *AVAssetResourceLoadingRequests*:
 <br><br>
 
-![Img1](https://github.com/SezorusArticles/Article_EZ002/blob/master/Images/Img1.jpg)
+![Img1](https://github.com/2ZGroupSolutionsArticles/Article_EZ002/blob/master/Images/Img1.jpg)
 <br>
 As we can see *AVAssetResourceLoader* sends few requests to get the info about the file. And junks of data with *requestedOffset* and *requestedLength*. 
 
@@ -176,13 +176,13 @@ For example, we have this case. Some data already downloaded. *AVAssetResourceLo
 Looks like on the diagram
 <br>
 
-![Img2](https://github.com/SezorusArticles/Article_EZ002/blob/master/Images/Img2.jpg)
+![Img2](https://github.com/2ZGroupSolutionsArticles/Article_EZ002/blob/master/Images/Img2.jpg)
 <br>
 Now we need to calculate which pease of data available for the origin request.<br>
 Logic looks like
 <br>
 
-![Img3](https://github.com/SezorusArticles/Article_EZ002/blob/master/Images/Img3.jpg)
+![Img3](https://github.com/2ZGroupSolutionsArticles/Article_EZ002/blob/master/Images/Img3.jpg)
 <br>
 Required steps:
 - Check with the length of downloaded data we can pass to the request
@@ -255,6 +255,6 @@ That's all with the basics of the *AVAssetResourceLoaderDelegate*. We understand
 ### Author
 Yevhenii(Eugene) Zozulia
 
-Email: yevheniizozulia@sezorus.com
+Email: yevheniizozulia@2zgroup.net
 
 LinkedIn: [EugeneZI](https://www.linkedin.com/in/eugenezi/)
