@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2SF-aB-SMi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Options-->
+        <scene sceneID="F77-9Z-DuL">
+            <objects>
+                <tableViewController id="jH8-fK-znS" customClass="OptionsViewController" customModule="DownloadMediaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h8M-kL-xva">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" textLabel="8fc-ql-X8e" style="IBUITableViewCellStyleDefault" id="UGI-Oz-0l4">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGI-Oz-0l4" id="Lmn-kt-kKs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Simple Export" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8fc-ql-X8e">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="jH8-fK-znS" id="koY-eF-EfE"/>
+                            <outlet property="delegate" destination="jH8-fK-znS" id="stw-VN-Loy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Options" id="Wub-8g-8k8"/>
+                    <connections>
+                        <segue destination="n7z-ju-TcA" kind="show" identifier="SimpleExport" id="vEr-fg-GNZ"/>
+                        <segue destination="HxV-wV-68q" kind="show" identifier="SimpleResourceLoader" id="bKL-rK-Vgd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UT-ET-AMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="-27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BXp-34-Qra">
+            <objects>
+                <navigationController id="2SF-aB-SMi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j44-sr-7ux">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jH8-fK-znS" kind="relationship" relationship="rootViewController" id="XVC-p8-wPR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waP-OD-BEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-705" y="-27"/>
+        </scene>
+        <!--Simple Export View Controller-->
+        <scene sceneID="gRe-YF-Od4">
+            <objects>
+                <viewController id="n7z-ju-TcA" customClass="SimpleExportViewController" customModule="DownloadMediaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e62-q4-86b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCu-qO-I2B" customClass="PlayerView" customModule="DownloadMediaDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ep3-or-lpp">
+                                        <rect key="frame" x="169" y="169" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ep3-or-lpp" firstAttribute="centerY" secondItem="cCu-qO-I2B" secondAttribute="centerY" id="7G1-iT-Y82"/>
+                                    <constraint firstAttribute="width" secondItem="cCu-qO-I2B" secondAttribute="height" multiplier="1:1" id="qzh-Ci-ypT"/>
+                                    <constraint firstItem="ep3-or-lpp" firstAttribute="centerX" secondItem="cCu-qO-I2B" secondAttribute="centerX" id="zWk-Sj-ASt"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gKY-U9-bLZ">
+                                <rect key="frame" x="18" y="607" width="339" height="31"/>
+                                <connections>
+                                    <action selector="progressSliderChanged:" destination="n7z-ju-TcA" eventType="valueChanged" id="AKT-9p-21K"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYV-Oc-32c">
+                                <rect key="frame" x="157.5" y="517" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="qwP-WR-tDx"/>
+                                    <constraint firstAttribute="height" constant="60" id="yil-Q3-gId"/>
+                                </constraints>
+                                <state key="normal" image="PlayIcon"/>
+                                <state key="selected" image="StopIcon"/>
+                                <connections>
+                                    <action selector="playStopButtonPushed:" destination="n7z-ju-TcA" eventType="touchUpInside" id="jeB-8q-Hyc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pQD-Mt-n33" firstAttribute="bottom" secondItem="gKY-U9-bLZ" secondAttribute="bottom" constant="30" id="1lx-iz-R8b"/>
+                            <constraint firstItem="cCu-qO-I2B" firstAttribute="top" secondItem="pQD-Mt-n33" secondAttribute="top" id="4dM-7C-PgA"/>
+                            <constraint firstItem="gKY-U9-bLZ" firstAttribute="top" secondItem="pYV-Oc-32c" secondAttribute="bottom" constant="30" id="8hB-tN-mvg"/>
+                            <constraint firstItem="pQD-Mt-n33" firstAttribute="trailing" secondItem="gKY-U9-bLZ" secondAttribute="trailing" constant="20" id="GQI-oQ-CPZ"/>
+                            <constraint firstItem="cCu-qO-I2B" firstAttribute="leading" secondItem="pQD-Mt-n33" secondAttribute="leading" id="PJd-Ku-f1S"/>
+                            <constraint firstItem="cCu-qO-I2B" firstAttribute="trailing" secondItem="pQD-Mt-n33" secondAttribute="trailing" id="QqC-0S-aL1"/>
+                            <constraint firstItem="gKY-U9-bLZ" firstAttribute="leading" secondItem="pQD-Mt-n33" secondAttribute="leading" constant="20" id="RIg-gZ-5CS"/>
+                            <constraint firstItem="pYV-Oc-32c" firstAttribute="centerX" secondItem="e62-q4-86b" secondAttribute="centerX" id="m7p-Vt-aw6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pQD-Mt-n33"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingActivity" destination="ep3-or-lpp" id="REH-rv-N3G"/>
+                        <outlet property="playStopButton" destination="pYV-Oc-32c" id="UM2-WV-vXK"/>
+                        <outlet property="playerView" destination="cCu-qO-I2B" id="XsP-Ck-veS"/>
+                        <outlet property="progressSlider" destination="gKY-U9-bLZ" id="doB-9e-9vI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61q-ON-BFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="-430"/>
+        </scene>
+        <!--Simple Resource Loader View Controller-->
+        <scene sceneID="yAS-Gr-ZRz">
+            <objects>
+                <viewController id="HxV-wV-68q" customClass="SimpleResourceLoaderViewController" customModule="DownloadMediaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8r1-xc-sfH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnf-UH-2zv" customClass="PlayerView" customModule="DownloadMediaDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vfz-fc-tsD">
+                                        <rect key="frame" x="169" y="169" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="vfz-fc-tsD" firstAttribute="centerY" secondItem="Wnf-UH-2zv" secondAttribute="centerY" id="FaH-Bi-wjk"/>
+                                    <constraint firstItem="vfz-fc-tsD" firstAttribute="centerX" secondItem="Wnf-UH-2zv" secondAttribute="centerX" id="RU0-5b-JeF"/>
+                                    <constraint firstAttribute="width" secondItem="Wnf-UH-2zv" secondAttribute="height" multiplier="1:1" id="hxg-I5-W4b"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IZb-9Z-rdJ">
+                                <rect key="frame" x="18" y="607" width="339" height="31"/>
+                                <connections>
+                                    <action selector="progressSliderChanged:" destination="HxV-wV-68q" eventType="valueChanged" id="bqc-wq-5ml"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht4-1L-l2H">
+                                <rect key="frame" x="157.5" y="517" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6fI-kW-Cbx"/>
+                                    <constraint firstAttribute="height" constant="60" id="m2q-mf-TCa"/>
+                                </constraints>
+                                <state key="normal" image="PlayIcon"/>
+                                <state key="selected" image="StopIcon"/>
+                                <connections>
+                                    <action selector="playStopButtonPushed:" destination="HxV-wV-68q" eventType="touchUpInside" id="IM5-jz-KsO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0YO-sw-ijT" firstAttribute="bottom" secondItem="IZb-9Z-rdJ" secondAttribute="bottom" constant="30" id="7N2-Wl-Oj4"/>
+                            <constraint firstItem="Wnf-UH-2zv" firstAttribute="leading" secondItem="0YO-sw-ijT" secondAttribute="leading" id="7N6-bc-PbG"/>
+                            <constraint firstItem="IZb-9Z-rdJ" firstAttribute="top" secondItem="ht4-1L-l2H" secondAttribute="bottom" constant="30" id="CSj-LV-p68"/>
+                            <constraint firstItem="0YO-sw-ijT" firstAttribute="trailing" secondItem="IZb-9Z-rdJ" secondAttribute="trailing" constant="20" id="Jgy-MH-bxg"/>
+                            <constraint firstItem="Wnf-UH-2zv" firstAttribute="trailing" secondItem="0YO-sw-ijT" secondAttribute="trailing" id="RHg-So-TRV"/>
+                            <constraint firstItem="IZb-9Z-rdJ" firstAttribute="leading" secondItem="0YO-sw-ijT" secondAttribute="leading" constant="20" id="YfN-0o-5PE"/>
+                            <constraint firstItem="Wnf-UH-2zv" firstAttribute="top" secondItem="0YO-sw-ijT" secondAttribute="top" id="sWn-Qj-7JO"/>
+                            <constraint firstItem="ht4-1L-l2H" firstAttribute="centerX" secondItem="8r1-xc-sfH" secondAttribute="centerX" id="yvq-AB-AF6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0YO-sw-ijT"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingActivity" destination="vfz-fc-tsD" id="jnu-SC-SsF"/>
+                        <outlet property="playStopButton" destination="ht4-1L-l2H" id="H2m-td-iK7"/>
+                        <outlet property="playerView" destination="Wnf-UH-2zv" id="IhU-v8-GbX"/>
+                        <outlet property="progressSlider" destination="IZb-9Z-rdJ" id="XWp-Z2-gvX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcb-bd-Rs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="331"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PlayIcon" width="33" height="36"/>
+        <image name="StopIcon" width="36" height="36"/>
+    </resources>
+</document>
